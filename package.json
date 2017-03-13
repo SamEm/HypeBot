@@ -1,0 +1,11 @@
+{
+  "name": "HypeBot",
+  "version": "1.0.0",
+  "description": "Discord HypeSquad Bot",
+  "main": "index.js",
+  "repository": "https://github.com/SamEm/HypeBot",
+  "author": "Logiz",
+  "dependencies": {
+    "eris": "^0.6.0"
+  }
+}
