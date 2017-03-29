@@ -2,8 +2,9 @@
 const Eris = require('eris');
 const config = require('./config');
 const commandList = require('./commandList')();
+const token = require('./token');
 
-let bot = new Eris(config.botToken);
+let bot = new Eris(token.botToken);
 
 bot.on('error', err => {
   console.log("ERROR:\n" + err.stack);

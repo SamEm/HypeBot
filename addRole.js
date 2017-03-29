@@ -8,7 +8,7 @@ let addRoles = {
     var index = roles.indexOf(location);
     if(index === -1){
       roles.push(location);
-      bot.editGuildMember(msg.guild.id, userID, {
+      bot.editGuildMember(msg.channel.guild.id, userID, {
         roles: roles
       }).then(() => {
         bot.createMessage(channelID, "<@" + userID + ">, you have been given the location of `" + locationName + "`. Use the same command again to remove this location from yourself.").then(utils.delay(config.delayInMS)).then((msgInfo) => {
@@ -21,7 +21,7 @@ let addRoles = {
       });
     }else{
       roles.splice(index, 1);
-      bot.editGuildMember(msg.guild.id, userID, {
+      bot.editGuildMember(msg.channel.guild.id, userID, {
         roles: roles
       }).then(() => {
         bot.createMessage(channelID, "<@" + userID + ">, you have been removed from the `" + locationName + "` location. Use the same command again to add this location to yourself.").then(utils.delay(config.delayInMS)).then((msgInfo) => {

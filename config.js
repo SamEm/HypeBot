@@ -1,5 +1,4 @@
 var config = {
-  botToken : '',
 
   botLogChannel: '282959338887315459',
 
@@ -21,7 +20,7 @@ var config = {
   germanyRole: '244231069413408769',
   centralRole: '265937810731565056',
   balticRole: '244232852219232258',
-  russiaRole: '266184644066672640',
+  russiaRole: '296722342053150721',
   polandRole: '258732939616059392',
   norwayRole: '244234761789243393',
   czechRole: '245965740107235338',
@@ -40,6 +39,9 @@ var config = {
   netherlandsRole: '245304094472929280',
   italyRole: '258880784713121794',
   switzerlandRole: '247775856515219458',
+  israelRole: '291456001478098945',
+  scotlandRole: '296356252542566407',
+  polandRole: '258732939616059392',
 
   everybodyRole: 'everybody', // Fake role for commands everyone can use
 

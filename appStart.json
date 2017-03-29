@@ -1,0 +1,11 @@
+{
+  "uid": "hypeBot",
+  "append": true,
+  "watch": true,
+  "script": "index.js",
+  "sourceDir": "./",
+  "logFile": "./logs/hblog.log",
+  "errFile": "./logs/errFile.log",
+  "wodkingDir": "./",
+  "path": "./"
+}

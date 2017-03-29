@@ -3,7 +3,7 @@ const config = require("../config");
 let addRoles = require('../addRole');
 
 let locations = {
-  pattern: /!australia|!baltic|!belgium|!brazil|!canada|!central|!eastern|!mountain|!pacific|!czech|!denmark|!estonia|!finland|!france|!germany|!ireland|!italy|!lithuania|!mexico|!netherlands|!nz|!newzealand|!norway|!portugal|!serbia|!russia|!slovenia|!spain|!sweden|!switzerland|!turkey|!uk|!unitedkingdom/i,
+  pattern: /!australia|!scotland|!belgium|!brazil|!canada|!central|!eastern|!mountain|!pacific|!czech|!denmark|!estonia|!finland|!france|!germany|!ireland|!italy|!lithuania|!mexico|!netherlands|!nz|!newzealand|!norway|!portugal|!serbia|!russia|!slovenia|!spain|!sweden|!switzerland|!turkey|!uk|!unitedkingdom/i,
   execute: function(bot, channelID, userTag, userID, command, msg) {
     var roles = msg.member.roles;
     switch (command.toLowerCase()) {
@@ -12,9 +12,9 @@ let locations = {
             locationName = "Australia";
         addRoles.location(bot, userID, channelID, location, msg, locationName, userTag);
       break;
-      case "!baltic":
-        var location = config.balticRole,
-            locationName = "Baltic";
+      case "!scotland":
+        var location = config.scotland,
+            locationName = "Scotland";
         addRoles.location(bot, userID, channelID, location, msg, locationName, userTag);
       break;
       case "!belgium":
@@ -162,6 +162,16 @@ let locations = {
       case "!uk":
         var location = config.ukRole,
             locationName = "UK";
+        addRoles.location(bot, userID, channelID, location, msg, locationName, userTag);
+      break;
+      case "!israel":
+        var location = config.israelRole,
+            locationName = "Israel";
+        addRoles.location(bot, userID, channelID, location, msg, locationName, userTag);
+      break;
+      case "!poland":
+        var location = config.poland,
+            locationName = "Poland";
         addRoles.location(bot, userID, channelID, location, msg, locationName, userTag);
       break;
     }
