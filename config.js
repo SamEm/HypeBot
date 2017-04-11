@@ -19,7 +19,6 @@ var config = {
   finlandRole: '244234866818940928',
   germanyRole: '244231069413408769',
   centralRole: '265937810731565056',
-  balticRole: '244232852219232258',
   russiaRole: '296722342053150721',
   polandRole: '258732939616059392',
   norwayRole: '244234761789243393',
@@ -41,7 +40,9 @@ var config = {
   switzerlandRole: '247775856515219458',
   israelRole: '291456001478098945',
   scotlandRole: '296356252542566407',
-  polandRole: '258732939616059392',
+  southARole: '298617952813580289',
+  asiaRole: '298624295498809344',
+
 
   everybodyRole: 'everybody', // Fake role for commands everyone can use
 
