@@ -3,17 +3,26 @@ const config = require("../config");
 let addRoles = require('../addRole');
 
 let locations = {
-  pattern: /!australia|!scotland|!belgium|!brazil|!canada|!central|!eastern|!mountain|!pacific|!czech|!denmark|!estonia|!finland|!france|!germany|!ireland|!italy|!lithuania|!mexico|!netherlands|!nz|!newzealand|!norway|!portugal|!serbia|!russia|!slovenia|!spain|!sweden|!switzerland|!turkey|!uk|!unitedkingdom/i,
+  pattern: /!southamerica|!asia|!australia|!scotland|!belgium|!brazil|!canada|!central|!eastern|!mountain|!pacific|!czech|!denmark|!estonia|!finland|!france|!germany|!ireland|!italy|!lithuania|!mexico|!netherlands|!nz|!newzealand|!norway|!portugal|!serbia|!russia|!slovenia|!spain|!sweden|!switzerland|!turkey|!uk|!unitedkingdom/i,
   execute: function(bot, channelID, userTag, userID, command, msg) {
     var roles = msg.member.roles;
     switch (command.toLowerCase()) {
+      case "!southamerica":
+        var location = config.southARole,
+            locationName = "South America";
+        addRoles.location(bot, userID, channelID, location, msg, locationName, userTag);
+      case "!asia":
+        var location = config.asiaRole,
+            locationName = "Asia";
+        addRoles.location(bot, userID, channelID, location, msg, locationName, userTag);
+      break;
       case "!australia":
-        var location = config.autraliaRole,
+        var location = config.australiaRole,
             locationName = "Australia";
         addRoles.location(bot, userID, channelID, location, msg, locationName, userTag);
       break;
       case "!scotland":
-        var location = config.scotland,
+        var location = config.scotlandRole,
             locationName = "Scotland";
         addRoles.location(bot, userID, channelID, location, msg, locationName, userTag);
       break;
