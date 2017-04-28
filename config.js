@@ -1,7 +1,8 @@
 var config = {
 
   botLogChannel: '282959338887315459',
-
+  botSpam: '307324599861903363',
+  
   modRole: '258357921505738752',
   hypeQueenRole: '258333211300462612',
   discordDevRole: '200719965437820928',
