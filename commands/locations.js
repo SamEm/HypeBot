@@ -189,7 +189,7 @@ let locations = {
     config.everybodyRole
     ],
   channels: [
-    config.allChannels
+    config.botSpam
   ]
 }
 module.exports = locations;
