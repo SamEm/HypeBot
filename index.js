@@ -16,9 +16,9 @@ bot.on("ready", () => {
 });
 
 commandList.add('intro');
-commandList.add('locations');
 commandList.add('rules');
 commandList.add('moderation');
+commandList.add('removeRole');
 
 function userHasRole(user, role) {
   return user.roles.some(memberRole => memberRole === role);
@@ -55,6 +55,10 @@ bot.on('messageCreate', (msg) => {
     let matchingCommand = commandList.find(command);
     //check for roles
     if(userHasAuthorityForCommand(msg.member, matchingCommand)) {
+      if(correctChannelIsBeingUsed(msg.channel, matchingCommand) !== true) {
+        return;
+      }
+
       matchingCommand.execute(bot, channelID, userTag, userID, command, msg);
     }else {
       // Prepared for later functionality
