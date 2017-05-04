@@ -1,16 +1,38 @@
 "use strict";
 const config = require("./config");
+const ids = require('./ids');
+const addRoles = require('./addRole');
 
 let unknownCommand = {
   pattern: /!.*/,
   execute: function(bot, channelID, userTag, userID, command, msg) {
-    //
+    let match = command.match(/!(.*)/i);
+    let thisLocation = match[1].toLowerCase();
+    switch (thisLocation) {
+      case "nl":
+        thisLocation = "netherlands";
+        break;
+      case "uk":
+        thisLocation = "unitedkingdom";
+        break;
+      case "uk":
+        thisLocation = "unitedkingdom";
+        break;
+      case "nz":
+        thisLocation = "newzealand";
+        break;
+    }
+    let locationID = ids[thisLocation];
+    if(!locationID) {
+      return;
+    }
+    addRoles.location(bot, userID, channelID, locationID, msg, thisLocation, userTag);
   },
   roles: [
     config.everybodyRole
   ],
   channels: [
-    config.allChannels
+    config.botSpam
   ]
 }
 
