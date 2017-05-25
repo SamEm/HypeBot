@@ -1,5 +1,5 @@
 {
-  "uid": "hypeBot",
+  "uid": "HypeBot",
   "append": true,
   "watch": true,
   "script": "index.js",
