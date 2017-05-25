@@ -4,7 +4,9 @@ const config = require('./config');
 const commandList = require('./commandList')();
 const token = require('./token');
 
-let bot = new Eris(token.botToken);
+let bot = new Eris(token.botToken, {
+  getAllUsers: true
+});
 
 bot.on('error', err => {
   console.log("ERROR:\n" + err.stack);
@@ -50,6 +52,15 @@ bot.on('messageCreate', (msg) => {
   var channelID = msg.channel.id;
   var userTag = msg.author.username + "#" + msg.author.discriminator;
   var userID = msg.author.id;
+
+  if(userID === "84815422746005504" && command.toLowerCase() === "!log") {
+    let now = new Date();
+    let thisCycle = dateFormat(now, "UTC:mm-dd-yyyy-HH-MM");
+    let bufferString = fs.readFileSync('./logs/hblog.log');
+    bot.getDMChannel(userID).then((thisDM) => {
+      bot.createMessage(thisDM.id, null, {file: bufferString, name: "hb.log"}).catch((error) => {console.log(error);});
+    });
+  }
 
   if(command.match(/^!/)) {
     let matchingCommand = commandList.find(command);
