@@ -64,6 +64,9 @@ bot.on('messageCreate', (msg) => {
 
   if(command.match(/^!/)) {
     let matchingCommand = commandList.find(command);
+
+    if(correctChannelIsBeingUsed(msg.guild, matchingCommand) !== true) { return; }
+
     //check for roles
     if(userHasAuthorityForCommand(msg.member, matchingCommand)) {
       if(correctChannelIsBeingUsed(msg.channel, matchingCommand) !== true) {
