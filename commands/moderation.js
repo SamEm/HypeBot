@@ -85,8 +85,7 @@ let moderation = {
     config.modRole,
     config.hypeQueenRole,
     config.discordDevRole,
-    config.hypeAlchRole,
-    config.everybodyRole
+    config.hypeAlchRole
     ],
   channels: [
     config.allChannels
