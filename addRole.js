@@ -12,8 +12,8 @@ let addRoles = {
         roles: roles
       }).then(() => {
         bot.createMessage(channelID, "<@" + userID + ">, you have been given the location of `" + locationName + "`.").then(utils.delay(config.delayInMS)).then((msgInfo) => {
-          bot.deleteMessage(channelID, msgInfo.id);
-          bot.deleteMessage(channelID, msg.id);
+          bot.deleteMessage(channelID, msgInfo.id).catch((err) => {});
+          bot.deleteMessage(channelID, msg.id).catch((err) => {});
         }).catch((err) => {
           console.log("--> AddRoles | addRole\n" + err);
         });

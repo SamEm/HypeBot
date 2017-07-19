@@ -10,6 +10,7 @@ let removeRole = {
     splitMsg.shift();
 
     let joinMsg = splitMsg.join('');
+    joinMsg = joinMsg.toLowerCase();
 
     if(!joinMsg) {
       bot.createMessage(channelID, "<@" + userID + ">, you need to add a location to remove").then(utils.delay(config.delayInMS)).then((msgInfo) => {
@@ -38,8 +39,8 @@ let removeRole = {
     let locationID = ids[joinMsg];
     if(!locationID) {
       bot.createMessage(channelID, "<@" + userID + ">, I can't find that location").then(utils.delay(config.delayInMS)).then((msgInfo) => {
-        bot.deleteMessage(channelID, msgInfo.id);
-        bot.deleteMessage(channelID, msg.id);
+        bot.deleteMessage(channelID, msgInfo.id).catch((err) => {});
+        bot.deleteMessage(channelID, msg.id).catch((err) => {});
       }).catch((err) => {
         console.log("--> removeRoles | wrongRole\n" + err);
       });

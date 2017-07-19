@@ -16,7 +16,7 @@ bot.on('error', err => {
 
 bot.on("ready", () => {
   bot.createMessage(config.botLogChannel, "I am online and ready to HYPE!");
-  console.log('Hype bot is ready!\n--------');
+  console.log('Hype bot is ready!\n' + process.pid);
 });
 
 commandList.add('intro');
