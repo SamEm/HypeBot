@@ -1,6 +1,6 @@
 var config = {
 
-  botLogChannel: '282959338887315459',
+  botLogChannel: '352145810269536256',
 
   modRole: '348187334799261696',
   discordDevRole: '348187404458524692',
