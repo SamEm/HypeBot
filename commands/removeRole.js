@@ -21,21 +21,7 @@ let removeRole = {
       });
       return;
     }
-
-    switch (joinMsg) {
-      case "nl":
-        joinMsg = "netherlands";
-        break;
-      case "uk":
-        joinMsg = "unitedkingdom";
-        break;
-      case "uk":
-        joinMsg = "unitedkingdom";
-        break;
-      case "nz":
-        joinMsg = "newzealand";
-        break;
-    }
+    
     let locationID = ids[joinMsg];
     if(!locationID) {
       bot.createMessage(channelID, "<@" + userID + ">, I can't find that location").then(utils.delay(config.delayInMS)).then((msgInfo) => {

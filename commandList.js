@@ -19,7 +19,7 @@ let unknownCommand = {
     config.everybodyRole
   ],
   channels: [
-    config.botSpam
+    config.allChannels
   ]
 }
 

@@ -94,9 +94,7 @@ let moderation = {
   },
   roles: [
     config.modRole,
-    config.hypeQueenRole,
-    config.discordDevRole,
-    config.hypeAlchRole
+    config.discordDevRole
     ],
   channels: [
     config.allChannels
