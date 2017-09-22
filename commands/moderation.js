@@ -3,14 +3,25 @@ const config = require("../config");
 const utils = require('../utils');
 
 let moderation = {
-  pattern: /!restart|!ping|!addrole/i,
+  pattern: /!restart|!ping|!addrole|!allroles/i,
   execute: function(bot, channelID, userTag, userID, command, msg) {
     switch (command.toLowerCase()) {
-      case "!roles":
+      case "!allroles":
+
         let roles = msg.member.guild.roles;
-        let rolesList = roles.map(function(role){
-          return role.name + ": '" + role.id + "'"; });
-        bot.createMessage(channelID, "```js\n" + rolesList.join(",\n") + "```").catch((err) => {console.log(err);});
+        let allRoles = '';
+        let rolesList = roles.map(function(role) {
+          let thisRole = `\n${role.name}: '${role.id}'`;
+          if(thisRole.length + allRoles.length > 1990) {
+            bot.createMessage(channelID, "```js" + allRoles + "```").catch((err) => {
+              console.log("roleList\n" + err);
+            });
+            allRoles = '';
+          }
+          allRoles += thisRole;
+        });
+
+        bot.createMessage(channelID, "```js" + allRoles + "```").catch((err) => {console.log(err);});
         break;
       case "!restart":
         console.log("Restarting");
